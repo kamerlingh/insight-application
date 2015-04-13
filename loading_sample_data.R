@@ -1,5 +1,5 @@
 #use apply type of function to test for zeros
-
+#add readme.md file
 
 ##load sample data from xlsx file
 library(xlsx)
