@@ -9,17 +9,20 @@ sample_data <- read.xlsx("sample_database.xlsx", sheetIndex=1, rowIndex=rowIndex
 #tidy data: rename columns, remove incomplete cases, use consistent names
 names(sample_data) <- c('id', 'substrate', 'thickness', 'Rs', 'tdep')
 
-#incomplete cases have zero values
-complete <- !(sample_data[,2]==0 | sample_data[,3]==0 | sample_data[,4]==0 | sample_data[,5]==0)
-sample_data <- sample_data[complete,]
-
-#incomplete cases also have '<NA>' and non-numeric values in thickness column
-complete <- !(is.na(as.numeric(as.character(sample_data[,3]))))
-sample_data <- sample_data[complete,]
-
 #coerce thickness and tdep into numeric (from factor)
 sample_data[,3] <- as.numeric(as.character(sample_data[,3]))
 sample_data[,5] <- as.numeric(as.character(sample_data[,5]))
+
+#eliminate rows with NA
+sample_data <- sample_data[complete.cases(sample_data),]
+
+#incomplete cases have zero values in one or more columns
+complete <- !(sample_data[,2]==0 | sample_data[,3]==0 | sample_data[,4]==0 | sample_data[,5]==0)
+sample_data <- sample_data[complete,]
+
+#incomplete cases have '<NA>' and non-numeric values in thickness column
+complete <- !(is.na(as.numeric(as.character(sample_data[,3]))))
+sample_data <- sample_data[complete,]
 
 #remove thickness data for samples thicker than 10 nm (reasonable transmissometer range)
 sample_data <- sample_data[sample_data[,3]<=10,]
