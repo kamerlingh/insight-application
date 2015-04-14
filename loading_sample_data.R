@@ -1,13 +1,14 @@
 #use apply type of function to test for zeros
 #add readme.md file
+#Loading Sample Data
 
-##load sample data from xlsx file
+#load sample data from xlsx file
 library(xlsx)
 colIndex <- c(1,2,3,4,20)
 rowIndex <- 3:1383
 sample_data <- read.xlsx("sample_database.xlsx", sheetIndex=1, rowIndex=rowIndex, colIndex=colIndex)
 
-##tidy data: rename columns, remove incomplete cases, use consistent names
+#tidy data: rename columns, remove incomplete cases, use consistent names
 names(sample_data) <- c('id', 'substrate', 'thickness', 'Rs', 'tdep')
 
 #incomplete cases have zero values
