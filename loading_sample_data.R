@@ -35,4 +35,5 @@ wrong_label <- sample_data[,2]=="Sinx"
 sample_data[wrong_label,][,2] <- "SiNx"
 
 ##add column for the inverse of the sheet resistance
+library(dplyr)
 sample_data <- mutate(sample_data, Rs_inv = 1/Rs)
