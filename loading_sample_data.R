@@ -1,6 +1,5 @@
 #use apply type of function to test for zeros
 #add readme.md file
-#get R-squared values and put into code
 #Loading Sample Data
 
 #load sample data from xlsx file
