@@ -1,5 +1,5 @@
 #Linear Regression of Sapphire Data
-# - plots data in RStudio and outputs png file
+# - plots deposition data in RStudio and outputs png file with both plots
 
 #create linear regression models for deposition time and thickness
 dep_Al2O3.fit <- glm(Rs_inv ~ tdep, data=sample_data[which(sample_data$substrate=="Al2O3"),])
