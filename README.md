@@ -8,4 +8,4 @@ Many groups use the deposition time as a proxy for the thickness: the longer the
 
 This repo has three R scripts. `loading_sample_data.R` loads our measurement data from an .xlsx file and cleans it. `exploratory_plots.R` plots the data and shows the motivation for using the measured thickness instead of the deposition time to describe our films. `linear_regression.R` performs linear regressions on the data, plots the results and creates a PNG file with the plots that include the R<sup>2</sup> values.
 
-![Linear regressions using the inverse sheet resistance vs. deposition time and vs. thickness](kamerlingh.github.com/insight-application/sapphire_analysis.png)
+![Linear regressions using the inverse sheet resistance vs. deposition time and vs. thickness](kamerlingh.github.com/insight-application/img/sapphire_analysis.png)
